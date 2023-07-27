@@ -1,0 +1,423 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    background-color: #181818;
+    align-items: center;
+    display: flex;
+    text-align: justify;
+    font-size: small;
+    height: 1rem;
+    width: 100vw;
+   margin-bottom: 10%;
+    height: 15vh;
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+   
+}
+main {
+    margin: 0;
+    padding: 0;
+    background-color: #fcf15e;
+}
+.HomePage {
+    margin: 0;
+    padding: 0;
+    display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr ;
+ 
+}
+img{
+    border-radius: 10%;
+    align-content: top;
+    align-items: top;
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: #17181c;
+    font: 1em /1.5 sans-serif;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 3.0rem;
+    size: 1.5rem;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: x-small;
+    margin: 0;
+    padding: 0;
+}
+
+.buttonStart{
+    border: none;
+    background-color: #1b1c1c;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: flex;
+    border-radius: 20%;
+    justify-content: center;
+    border-radius: 20px;
+    text-align: center;
+    align-items: end;
+    font-style: initial;
+    font-size: calc(0.5em + 1vw);
+    width: 28%;
+    margin: 5%;
+    padding: 2%;
+}
+
+.HomeInfo {
+    display: grid;
+    justify-content: right;
+    columns: 1fr 1fr 1fr;
+    gap: 1rem;
+
+}
+
+.contentBtn{
+    display: flex;
+    justify-content: center;
+    align-items: bottom;
+}
+
+footer {
+    background-color: rgb(56, 43, 43);
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    bottom: 0;
+    position: fixed;
+}
+.footer{
+    color: white;
+    font-size: calc(0.5em + 1vw);
+    font-family: 'Roboto', sans-serif;
+}
+
+/*****************Muro **********************/
+.profileContainer{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #A4A3A3;
+    background-color: #ebffe6;
+    border-radius: 6px;
+    margin: 2% auto;
+    margin-top: 0%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.textAreaPublication{
+    width: 80%;
+    height: 50%;
+    margin: 4% auto;
+    border: 3px solid #b4b4b4;
+    box-sizing: border-box;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.buttonsPost{
+    display: flex;
+    justify-content: space-between;
+    margin: 3% 3%;
+    cursor: pointer;
+}
+
+.buttonImg{
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.buttonShare{
+    width: 6em;
+    font-size: 1em;
+    /* padding: 20%; */
+    background-color: #080808;
+    border-radius: 10px;
+    border: 1px solid #0b0b0b;
+    padding: 1% 2%;
+    margin: 2%;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    cursor: pointer;
+}
+/* Imagen del hamster para el loading*/
+
+.wheel-and-hamster {
+    position: relative;
+    height: 12em;
+    width: 12em;
+}
+
+.wheel,
+.hamster,
+.hamster div,
+.mid {
+    position: absolute;
+}
+
+.wheel,
+.mid {
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wheel {
+    background: radial-gradient(100% 100% at center, #99999900 47%, #9b9696 40%);
+    z-index: 2;
+}
+
+.hamster {
+    top: 50%;
+    left: calc(50% - 3.5em);
+    height: 3.75em;
+    width: 7em;
+    transform: rotate(4deg) translae(-0.8em, 1.85em);
+    transform-origin: 50% 0;
+    animation: hamster 1s ease-in-out infinite;
+}
+
+@keyframes hamster{
+    0%, 100% {
+        transform: rotate(4deg) translate(-0.8em, 1.85em); 
+    }
+    50% {
+        transform: rotate(0deg) translate(-0.8em, 1.85em);
+    }
+}
+.head {
+    background: #f48c25;
+    border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
+    box-shadow: 0 -0.25em 0 #facc9e inset,
+                0.75em -1.55em 0 #fce6cf inset;
+    top: 0;
+    left: -2em;
+    height: 2.5em;
+    width: 2.75em;
+    transform-origin: 100% 50%;
+    animation: head 1s ease-in-out infinite;
+}
+
+@keyframes head {
+    0%, 25%,  75%,  100% {
+        transform: rotate(0);
+    }
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: rotate(12deg);
+    }
+}
+.ear {
+    background: #fbb6b6;
+    border-radius: 50%;
+    box-shadow: -0.25em 0 #f48c25 inset;
+    top: -0.25em;
+    right: -0.25em;
+    height: 0.75em;
+    width: 0.75em;
+    transform-origin: 50% 75%;
+    animation: ear 1s ease-in-out infinite;
+}
+
+@keyframes ear {
+    0%, 90%, 100% {
+        transform: scaleY(1);
+    }
+    95% {
+        transform: scaleY(0);
+    }
+}
+
+.eye {
+    background-color: #000;
+    border-radius: 50%;
+    top: 0.75em;
+    left: 1.25em;
+    height: 0.5em;
+    width: 0.5em;
+    animation: eye 1s linear infinite;
+}
+
+.nose {
+    background: #fbb6b6;
+    border-radius: 35% 65% 15% / 70% 50% 50% 30%;
+    top: 0.75em;
+    left: 0;
+    height: 0.25em;
+    width: 0.2em;
+}
+
+.body {
+    background: #fce6cf;
+    border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
+    box-shadow: 0.1em 0.75em 0 #f48c25 inset,
+                0.15em -0.5em 0 #efbd8c inset;
+    top: 0.25em;
+    left: 2em;
+    height: 3em;
+    width: 4.5em;
+    transform-origin: 17% 50%;
+    transform-style: preserve-3d;
+    animation: body 1s ease-in-out infinite;
+}
+
+@keyframes body{
+    0%, 25%, 75%, 100% {
+        transform: rotate(0);
+    } 
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: rotate(-2deg);
+    }
+}
+
+.leg-front-right, .leg-front-left {
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 70% 90%, 70% 100%, 30% 100%,40% 90% );
+    top: 2em;
+    left: 0.5em;
+    height: 1.5em;
+    width: 1em;
+    transform-origin: 50% 0%;
+  
+}
+
+.leg-front-right {
+    background: linear-gradient(#facc9e 80%, #f98686 80%);
+    transform: rotate(15deg) translateZ(-1px);
+    animation: fr 1s linear infinite;
+}
+
+@keyframes fr {
+    0%, 25%,  75%,  100% {
+        transform: rotate(0);
+    }
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: rotate(-30deg) translateZ(-1px);
+    }
+}
+
+.leg-front-left{
+    background: linear-gradient(#facc9e 80%, #f98686, 80%);
+    transform: rotate(15deg);
+    animation: fl 1s linear infinite;
+}
+
+@keyframes fl {
+    0%, 25%,  75%,  100% {
+        transform: rotate(-30deg);
+    }
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: rotate(50deg);
+    }
+}
+
+.leg-back-right, .leg-back-left {
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 70% 90%, 70% 100%, 30% 100%,40% 90%, 0% 30% );
+    top: 1em;
+    left: 2.0em;
+    height: 2.5em;
+    width: 1.5em;
+    transform-origin: 50% 0%;
+    border-radius: 0.75em 0.75em 0 0;
+  
+}
+.leg-back-right {
+    background: linear-gradient(#facc9e 90%, #f98686 90%);
+    transform: rotate(-25deg) translateZ(-1px);
+    animation: br 1s linear infinite;
+    
+}
+
+@keyframes br {
+    0%, 25%,  75%,  100% {
+        transform: rotate(-60deg);
+    }
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: rotate(20deg) translateZ(-1px);
+    }
+}
+
+.leg-back-left {
+    background: linear-gradient(#facc9e 90%, #f98686 90%);
+    transform: rotate(-25deg);
+    animation: bl 1s linear infinite;
+}
+
+@keyframes bl {
+    0%, 25%,  75%,  100% {
+        transform: rotate(20deg);
+    }
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: rotate(-60deg);
+    }
+}
+
+.tail {
+    background:#fce6cf;
+    border-radius: 0.25em 50% 50% 0.25em;
+    box-shadow: 0 -0.2em #f48c25 inset;
+    top: 1.5em;
+    right: -0.5em;
+    height: 0.5em;
+    width: 1em;
+    transform: rotate(30deg) translateZ(-1px);
+    transform-origin: 0.25em 0.25em;
+    animation: tail 1s linear infinite;
+}
+
+@keyframes tail {
+    0%, 25%,  75%,  100% {
+        transform: rotate(30deg) translateZ(-1px);
+    }
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: rotate(10deg) translateZ(-1px);
+    }
+}
+
+.mid{
+    background: radial-gradient(100% 100% at center, #9b9696 4.8%,
+     #99999900 5%),
+    linear-gradient(#8c8c8c00 46.9%, #999999 46% 51.9%,
+    #a6a6a600 53%) 50% 50% / 99% 99% no-repeat;
+    animation: mid 1s linear infinite;
+}
+
+@keyframes mid{
+    0%{
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(-1turn transform: rotate(0););
+    }
+}
