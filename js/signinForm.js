@@ -72,7 +72,7 @@ export const signin = () => {
             }
         }
 
-        //window.location.hash = '#/signinForm'
+         window.location.hash = '#/muro'
 
     });
 
