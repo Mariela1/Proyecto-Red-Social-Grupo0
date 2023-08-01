@@ -64,8 +64,6 @@ btnSignUp.addEventListener('click', (e) => {
             }
         
         }
-  
-    
     
     });
     

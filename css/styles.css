@@ -59,7 +59,7 @@ body {
 }
 
 .menu{
-    display: flex;
+    display: inline-block;
     justify-content: center;
     align-items:center;
     height: 3.0rem;
@@ -171,7 +171,8 @@ footer {
     text-align: center;
     cursor: pointer;
 }
-/* Imagen del hamster para el loading*/
+
+/**************** Imagen del hamster para el loading******************/
 
 .wheel-and-hamster {
     position: relative;

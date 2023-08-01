@@ -2,27 +2,41 @@ import {components} from '../lib/dictionary.js';
 
 export const changeViews = (hash) => {
     const contentElement = document.getElementById('content');
-    if (contentElement)
-    {contentElement.innerHTML = "";
- 
-    switch (hash) {
+    
+    if (contentElement) {
+        contentElement.innerHTML = "";
+        let componentToAdd = null;
+        
+        switch (hash)   {
         case '':
         case '#':
         case '#/':
         case '#/home':
-            return contentElement.appendChild(components.inicio());
+            componentToAdd = components.inicio();
+            break;
         case '#/signinForm':
-            return contentElement.appendChild(components.inicioSesion());
+            componentToAdd = components.inicioSesion();
+            break;
         case '#/signupForm': 
-            return contentElement.appendChild(components.registro());
+            componentToAdd = components.registro();
+            break;
         case '#/logout':
-            return contentElement.appendChild(components.logout());
+            componentToAdd = components.logout();
+            break;
         case '#/muro':
-            return contentElement.appendChild(components.muro());
-   }}
-   else {
-         return contentElement.appendChild(components.inicio());
-   }
+            componentToAdd = components.muro();
+            break;
+        case '#/perfil':
+            componentToAdd = components.perfil();
+            break;
+        default:
+            componentToAdd = components.inicio();
+            break;
+        }
+   if (componentToAdd) {
+         contentElement.appendChild(componentToAdd);
+        }
     
+}
 
 };

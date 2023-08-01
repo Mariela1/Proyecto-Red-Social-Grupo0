@@ -1,6 +1,5 @@
-
 export const home = () => {
-
+    const divElement = document.createElement('div');
     const html = `
     <div class="HomePage">
         <div>
@@ -17,15 +16,15 @@ export const home = () => {
         </aside>
     </div>
 `
-    const divElement = document.createElement('div');
+   
     divElement.innerHTML = html;
 
     const btnStart = divElement.querySelector('.buttonStart');
-    //document.querySelector('.home a').style.display = 'block';
-    window.location.hash = '#/home'
+        //document.querySelector('.home a').style.display = 'block';
+        //window.location.hash = '#/home'
 
     btnStart.addEventListener('click', () => {
-        window.location.hash = '#/signinForm'
+        window.location.hash = '#/signinForm';
     });
     return divElement;
 };

@@ -23,8 +23,8 @@ export const signin = () => {
                     <button id='signUp' type="submit" class="btn btn-dark w-100 mb-4">
                         Registrarse
                     </button>
-
-                    <button id='btnGoogle' type="submit" class="btn btn-dark"w-80 mb-4 id="googleLogin"><i class="fa-brands fa-google fa-2xs" style="color: #0031f5;"></i>
+                
+                    <button id='btnGoogle' src="../img/google.png" type="submit" class="btn btn-dark"w-80 mb-4 id="googleLogin"><i class="fa-brands fa-google fa-2xs" style="color: #0031f5;"></i>
                         Google
                     </button>
                 </form>
@@ -50,7 +50,7 @@ export const signin = () => {
             // En el firebase
             const userCredentials = await signInWithEmailAndPassword(auth, email, password);
             console.log(userCredentials);
-
+           //window.location.hash = '#/muro'
             // cerrar el modal de logueo de usuario
             // const modal = bootstrap.Modal.getInstance(signInForm.closest('.modal'));
             //modal.hide();
@@ -58,7 +58,7 @@ export const signin = () => {
             // Mensaje de bienvenida
             showMessage('Bienvenido  ' + userCredentials.user.email);
             //console.log(email, password)
-
+            window.location.hash = '#/muro'
         } catch (error) {
             //console.log(error)
             if (error.code === 'auth/wrong-password') {
@@ -72,37 +72,36 @@ export const signin = () => {
             }
         }
 
-         window.location.hash = '#/muro'
-
+       
+        
     });
 
     // --------------------Registro-------------------------
 
-  btnSignUp.addEventListener('click', (e) => {
+btnSignUp.addEventListener('click', (e) => {
     e.preventDefault();
-    window.location.hash = '#/signUp';
+    window.location.hash = '#/signupForm'
   });
 
-    btnGoogle.addEventListener('click', async (e) => {
-        e.preventDefault();
+btnGoogle.addEventListener('click', async (e) => {
+    e.preventDefault();
 
-        const provider = new GoogleAuthProvider();
+    const provider = new GoogleAuthProvider();
 
-        try {
+    try {
             const credentials = await signInWithPopup(auth, provider)
             console.log(credentials);
             console.log("sesion iniciada con google");
-
+            window.location.hash = '#/muro'
             // Cerrar el modal de logueo de usuario
             //const modal = bootstrap.Modal.getInstance(document.querySelector('#signinModal'));
             //modal.hide();
 
             // Mostrar mensaje de bienvenida
             showMessage('Bienvenido  ' + credentials.user.displayName, 'success');
-        } catch (error) {
-
-            console.log(error);
-        }
+    } catch (error) {
+        console.log(error);
+    }
 
         taskForm.reset();
     });
@@ -120,10 +119,13 @@ export const signin = () => {
         }
     
     });
-
+ 
+   
     return divElement;
 
+   
 }
+
 
 
 
