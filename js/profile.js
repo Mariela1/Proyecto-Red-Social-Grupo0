@@ -1,5 +1,6 @@
 
 
 export const profile = () => {
-    console.log('perfil');
-}
+    console.log('perfil')
+    
+        }

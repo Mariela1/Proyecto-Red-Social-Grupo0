@@ -12,4 +12,6 @@ export const logout = () => {
         console.log(error);
     }
     });
+
+   
 };

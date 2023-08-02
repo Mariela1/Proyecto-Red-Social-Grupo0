@@ -1,5 +1,6 @@
 import { changeViews } from '../routers/router.js';
-import {wall} from '../js/wall.js';
+import { loginCheck } from '../js/loginCheck.js';
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 import {auth,
 //getPosts,
 //onGetPosts,
@@ -9,8 +10,6 @@ import {auth,
 import '../js/signupForm.js';
 import '../js/logout.js';
 import '../js/signinForm.js';
-import '../js/loading.js';
-import '../js/wall.js';
 import '../js/loading.js';
 import '../js/wall.js';
 
@@ -32,6 +31,20 @@ const init = () => {
         ocultarLoader();
       });
     //window.location.hash = '#/home';
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+          loginCheck(user)
+          try {
+              console.log("sesión iniciada");
+          } catch (error) {
+              console.log(error);
+          }
+      } else {
+          loginCheck(user)
+      }
+  
+  });
+
 };
 
 window.addEventListener('load', init) 

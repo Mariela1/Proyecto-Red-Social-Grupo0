@@ -21,6 +21,7 @@
     orderBy,
     } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js"
 
+  
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
@@ -92,7 +93,38 @@ export const updateLoves = (id, likes) => {
   return postRef.update({ likes });
 };
 // Metodo para obtener un post desde su Id
-export const getPostsUserId = (id) => {
-  const postOnFirestore = db.collection('posts').doc(id).get();
-  return postOnFirestore;
+export const getPostsUserId = async (id) => {
+  const postCollection = collection(getFirestore(), 'posts');
+  const postDoc = await getDoc(doc(postCollection, id));
+  return postDoc;
+};
+
+
+// Funcion para leer los posts en el perfil
+export const postProfile = (posts) => {
+  const container = document.querySelector('.container-new-post-profile');
+  if (container) {
+    if (posts.length === 0) {
+      container.innerHTML = notYetPost;
+    } else {
+      const uid = firebase.auth().currentUser.uid;
+      container.innerHTML = '';
+      posts.forEach((post) => {
+        const divPost = templatePost(post.profilePicture, post.names, post.privacy, post.date,
+          post.post, post.photo, post.likes, post.id, uid, post.uid);
+        container.appendChild(divPost);
+      });
+    }
+
+    if (container.innerHTML === '') {
+      container.innerHTML = notYetPost;
+    }
+
+  //  updatePostsOnClick();
+   // deletePostsOnClick();
+    //btnLikes();
+    //showOpt();
+  }
+
+  return container;
 };
